@@ -8,8 +8,13 @@
 {% block content %}
 
     {% formfields %}
-
-
+    <button onclick="alertFunction()" name="alert"> Create Alert</button>
+    <script>
+    function alertFunction() {
+        alert("Hi!, I am a Simple Alert.")
+    }
+    </script>
+    
 <p>{% next_button %}</p>
 
     {% include Constants.instructions_template %}

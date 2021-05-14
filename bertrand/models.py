@@ -8,7 +8,11 @@ from otree.api import (
     Currency as c,
     currency_range,
 )
-
+#import tkinter as tk
+#from tkinter import *
+#from PIL import ImageTk, Image
+#from tkinter import messagebox
+#from selenium import webdriver
 
 doc = """
 2 firms complete in a market by setting prices for homogenous goods.
@@ -20,10 +24,13 @@ Econometrica: Journal of the Econometric Society, 343-371."
 
 
 class Constants(BaseConstants):
+    name_in_url = 'MobilePhones'
+    players_per_group = None
+    num_rounds = 1
     players_per_group = 2
     name_in_url = 'bertrand'
     num_rounds = 1
-
+    
     instructions_template = 'bertrand/instructions.html'
 
     maximum_price = c(100)
@@ -35,6 +42,19 @@ class Subsession(BaseSubsession):
 
 class Group(BaseGroup):
     winning_price = models.CurrencyField()
+    
+
+    
+    
+    
+    #def popupmsg(msg, title):
+    #    root = tk.Tk()
+    #    root.title(title)
+    #    label = tk.Label(root, text=msg)
+    #    label.pack(side="top", fill="x", pady=10)
+    #    B1 = tk.Button(root, text="Okay", command = root.destroy)
+    #    B1.pack()
+        
 
     def set_payoffs(self):
         import random
