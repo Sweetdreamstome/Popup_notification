@@ -8,12 +8,39 @@
 {% block content %}
 
     {% formfields %}
-    <button onclick="alertFunction()" name="alert"> Create Alert</button>
+
     <script>
-    function alertFunction() {
-        alert("Hi!, I am a Simple Alert.")
-    }
-    </script>
+        setTimeout(
+    function () {
+        alert("Hemos notado el tiempo que te ha tomado en la sección actual del experimento y queremos saber si tienes algún inconveniente, duda o consulta. No olvide que su compañer@ esta esperando a que termine esta sección para avanzar. ");
+    },
+    6*1000 // 6 seconds
+);
+
+
+
+
+
+
+        // function alertFunction() {
+        //alert("Hi!, I am a Simple Alert. Please Click on the 'OK' Button.");
+        //}
+        //window.onload = function() {var startTime = Date.now();};
+        //var timeSpent=Date.now()-startTime
+        //if (timeSpent>1) {alertFunction();}
+                //function doTimeStuff(){
+                //var timeSpent = Date.now() - startTime;
+                //if (timeSpent>0) {alertFunction();}
+                // save the number in the hidden field
+                //document.getElementById('my_hidden_field_id').value = timeSpent;
+                //}
+        //doTimeStuff();
+       
+            </script>
+       
+
+
+    
     
 <p>{% next_button %}</p>
 

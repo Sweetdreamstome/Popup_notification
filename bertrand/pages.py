@@ -1,10 +1,6 @@
 from ._builtin import Page, WaitPage
 from otree.api import Currency as c, currency_range
 from .models import Group
-#from tkinter import *
-#from PIL import ImageTk,Image
-#from tkinter import messagebox
-#from selenium import webdriver
 
 class Introduction(Page):
     pass
@@ -25,26 +21,13 @@ class Decide(Page):
     
     form_model = 'player'
     form_fields = ['price']
-    '''
-    def before_next_page(self):
-        driver=webdriver.Chrome("C:/Users/fredi/Desktop/python/e2labup/pop_up/chromedriver.exe")
-        driver.maximize_window()
-        location="C:/Users/fredi/Desktop/python/e2labup/pop_up/testmehtml.html"
-        driver.get(location)
-        
-        button=driver.find_element_by_name('alert')
-        button.click()
-        driver.close
-    '''
-    #def before_next_page(self):
-        
-        #Aquí tengo que poner 3 minutos o más
-        
-        #self.group.popupmsg("Hola")
-        #mainloop()
-
+    
+    
+   
 class ResultsWaitPage(WaitPage):
     after_all_players_arrive = 'set_payoffs'
+    template_name = 'bertrand/MyWaitPage.html'
+
 
 
 class Results(Page):
