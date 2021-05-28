@@ -20,10 +20,13 @@ Econometrica: Journal of the Econometric Society, 343-371."
 
 
 class Constants(BaseConstants):
+    name_in_url = 'MobilePhones'
+    players_per_group = None
+    num_rounds = 1
     players_per_group = 2
     name_in_url = 'bertrand'
     num_rounds = 1
-
+    
     instructions_template = 'bertrand/instructions.html'
 
     maximum_price = c(100)
@@ -35,6 +38,8 @@ class Subsession(BaseSubsession):
 
 class Group(BaseGroup):
     winning_price = models.CurrencyField()
+
+        
 
     def set_payoffs(self):
         import random
@@ -62,3 +67,5 @@ class Player(BasePlayer):
     )
 
     is_winner = models.BooleanField()
+   
+   
