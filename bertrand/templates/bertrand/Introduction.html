@@ -1,6 +1,13 @@
 {% extends "global/Page.html" %}
 {% load otree %}
-
+<script>
+    setTimeout(
+    function () {
+    alert("Hemos notado el tiempo que te ha tomado en las instrucciones y queremos saber si tienes algún inconveniente, duda o consulta. Escríbenos por WhatsApp o Correo.");
+ },
+ 6*1000 // 6 seconds
+    )
+</script>
 {% block title %}Introduction{% endblock %}
 
 {% block content %}
