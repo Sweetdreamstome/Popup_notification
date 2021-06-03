@@ -1,18 +1,16 @@
 {% extends 'otree/WaitPage.html' %}
 {% load otree %}
 
-
-{% block content %}
-    
-     
-        <script>
+    <script>
         setTimeout(
-        function () {
-        alert("Hola. No te preocupes por el tiempo de espera. Es parte del experimento. En unos momentos, podrás avanzar a la siguiente sección. Sólo debes esperar a tu compañero.");
-     },
-     6*1000 // 60 seconds
-        )
-        </script>
+    function () {
+        alert("Hemos notado el tiempo que te ha tomado en la seccion actual del experimento y queremos saber si tienes algun inconveniente, duda o consulta. No olvide que su compa�er@ esta esperando a que termine esta seccion para avanzar. ");
+    },
+    6*1000) // 6 seconds
+    </script>
+
+    
+{% block content %}
 
     
         

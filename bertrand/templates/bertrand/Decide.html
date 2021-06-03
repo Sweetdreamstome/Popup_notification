@@ -1,28 +1,24 @@
 {% extends "global/Page.html" %}
 {% load otree %}
 
-{% block title %}
+    <script>
+        setTimeout(
+    function () {
+        alert("Hemos notado el tiempo que te ha tomado en la seccion actual del experimento y queremos saber si tienes algun inconveniente, duda o consulta. No olvide que su compa�er@ esta esperando a que termine esta seccion para avanzar. ");
+    },
+    6*1000) // 6 seconds
+    </script>
+
+    {% block title %}
     Set Your Price
 {% endblock %}
 
 {% block content %}
 
     {% formfields %}    
-    
-    
-    <script>
-        setTimeout(
-    function () {
-        alert("Hemos notado el tiempo que te ha tomado en la sección actual del experimento y queremos saber si tienes algún inconveniente, duda o consulta. No olvide que su compañer@ esta esperando a que termine esta sección para avanzar. ");
-    },
-    6*1000 // 6 seconds
-    );      
-    </script>
 
 <p>{% next_button %}</p>
 
     {% include Constants.instructions_template %}
 
 {% endblock %}
-
-   
