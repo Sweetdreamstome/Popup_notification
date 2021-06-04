@@ -1,18 +1,15 @@
 {% extends 'otree/WaitPage.html' %}
 {% load otree %}
-
-    <script>
-        setTimeout(
-    function () {
-        alert("Hemos notado el tiempo que te ha tomado en la seccion actual del experimento y queremos saber si tienes algun inconveniente, duda o consulta. No olvide que su compañer@ esta esperando a que termine esta seccion para avanzar. ");
-    },
-    6*1000) // 6 seconds
-    </script>
-
-    
+ 
 {% block content %}
+ 
 
-    
-        
-
+ <script>
+ setTimeout( 
+ function(){
+ alert('Somos el equipo E2LabUP. No te preocupes por el tiempo de espera. Es parte del experimento. En unos momentos, podras avanzar a la siguiente seccion.');
+ },
+ 3*1000) // 3 seconds
+ </script>
+ 
 {% endblock %}
