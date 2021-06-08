@@ -1,15 +1,36 @@
 import os
-def agregar_popup(directorio):
-    #directorio: string que contiene el directorio de los templates de la aplicación
-
-    os.chdir(directorio) #abres el directorio en python
-    
-    #Diccionario con los textos y minutos:
-    lista1=["Somos el equipo E2LabUP. Hemos notado el tiempo que te ha tomado en la seccion actual del experimento y queremos saber si tienes algun inconveniente, duda o consulta.","Somos el equipo E2LabUP. No te preocupes por el tiempo de espera. Es parte del experimento. En unos momentos, podras avanzar a la siguiente seccion."]
+"""
+Si quieres modificar tu template, elimina el script que se agrega con la funcion de agregar_popup.
+Después que modifiques tu template, asegura que exista un espacio en blanco para que el html pueda ser 
+escrito y no suceda un error. Luego puedes usar la funcion de agregar_popup (solo se agregará el script en
+aquel template que lo necesite)
+"""
+def agregar_popup(directorio1,directorio2):
+    """
+    Input:
+    directorio1: string que contiene el directorio de los templates de la aplicacion,
+    directorio2: string que contiene el archivo txt que tiene el cuerpo del pop up.
+    Output:
+    Funcion de html en cada template.
+    """
+    os.chdir(directorio2) #abres el directorio del texto en python
+    abrir_file_texto=open("texto.txt","r+")
+    file_texto=abrir_file_texto.readlines()
+    lista1=[]
+    #lista1="Somos el equipo E2LabUP. Hemos notado el tiempo que te ha tomado en la seccion actual del experimento y queremos saber si tienes algun inconveniente, duda o consulta.","Somos el equipo E2LabUP. No te preocupes por el tiempo de espera. Es parte del experimento. En unos momentos, podras avanzar a la siguiente seccion."]
     lista2=[6,3]
+    for lista in file_texto:
+        tag="\n"
+        for word in range(len(tag)):
+            lista=lista.replace(tag[word],"")
+        lista1.append(lista)
+        
+        
+        
+    os.chdir(directorio1) #abres el directorio de los templates en python
     #Lista con todos los templates:
     lista=[]
-    for fichero in os.scandir(directorio):
+    for fichero in os.scandir(directorio1):
         lista.append(fichero.name)
 
     #abrir el file y realizar el procedimiento para cada template dentro del directorio:
@@ -45,32 +66,9 @@ def agregar_popup(directorio):
                 abrir_2file.write(new_text)
                 abrir_2file.close()
 
-lista=["Somos el equipo E2LabUP. Hemos notado el tiempo que te ha tomado en la seccion actual del experimento y queremos saber si tienes algun inconveniente, duda o consulta.","Somos el equipo E2LabUP. No te preocupes por el tiempo de espera. Es parte del experimento. En unos momentos, podras avanzar a la siguiente seccion."]
-lista1=[6,3]
-#agregar_popup("C:/Users/fredi/Desktop/python/e2labup/bertrandd/bertrand/templates/bertrand/Decide.html",lista[0],lista1[0])
-#agregar_popup("C:/Users/fredi/Desktop/python/e2labup/bertrandd/bertrand/templates/bertrand/MyWaitPage.html",lista[1],lista1[1])
-
-#Ahora voy a tratar de leer directorios en un archivo...
-#dir="C:/Users/fredi/Desktop/python/e2labup/bertrandd/bertrand/templates/bertrand"
-#with os.scandir(dir) as ficheros:
-#    for fichero in ficheros:
-#        print(fichero.name)
-
-# crearé una lista con esos nombres...
-#url=[]
-#for fichero in os.scandir(dir):
-#    url.append(fichero.name)
-
-#ahora intentare usar este url en la funcion agregar_popup
-#url=['Decide.html', 'instructions.html', 'Introduction.html', 'MyWaitPage.html', 'Results.html', 'TestMobile.html']
-#agregar_popup("C:/Users/fredi/Desktop/python/e2labup/bertrandd/bertrand/templates/bertrand",url[0],lista[0],lista1[0])
-#agregar_popup("C:/Users/fredi/Desktop/python/e2labup/bertrandd/bertrand/templates/bertrand",url[3],lista[1],lista1[1])
-
-#y salió
+#lista=["Somos el equipo E2LabUP. Hemos notado el tiempo que te ha tomado en la seccion actual del experimento y queremos saber si tienes algun inconveniente, duda o consulta.","Somos el equipo E2LabUP. No te preocupes por el tiempo de espera. Es parte del experimento. En unos momentos, podras avanzar a la siguiente seccion."]
+#lista1=[6,3]
 
 
-#si quieres modificar tu template, elimina el script que se agrega con la funcion de agregar_popup
-#después que modifiques tu template, asegura que exista un espacio en blanco para que el html pueda ser 
-#escrito y no suceda un errror. Luego puedes usar la funcion de agregar_popup
+agregar_popup("C:/Users/fredi/Desktop/python/e2labup/bertrandd/bertrand/templates/bertrand","C:/Users/fredi/Desktop/python/e2labup")
 
-agregar_popup("C:/Users/fredi/Desktop/python/e2labup/bertrandd/bertrand/templates/bertrand")
