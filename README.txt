@@ -1,2 +1,4 @@
 Respecto al popup:
-Se necesita mostrar el pop up respectivamente, y ver si necesita aún más cambios o ya está listo para el testeo.
+La función agregar_popup está en el branch "gress", el .py se llama "avance_popup".
+El html que incluye el texto de los popup está en el branch "gress", el .html se llama "texto"
+

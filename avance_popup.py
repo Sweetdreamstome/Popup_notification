@@ -1,9 +1,9 @@
 import os
 """
-Si quieres modificar tu template, elimina el script que se agrega con la funcion de agregar_popup.
-Después que modifiques tu template, asegura que exista un espacio en blanco para que el html pueda ser 
-escrito y no suceda un error. Luego puedes usar la funcion de agregar_popup (solo se agregará el script en
-aquel template que lo necesite)
+Si quieres modificar tu template, elimina el texto que se agrega en el template con la funcion de agregar_popup.
+Después que modifiques tu template, asegura que exista un espacio en blanco para que el texto del
+pop up pueda ser escrito y no suceda un error. Luego puedes usar la funcion de agregar_popup 
+(solo se agregará el script en aquel template que lo necesite)
 """
 def agregar_popup(directorio1,directorio2):
     """
@@ -14,11 +14,12 @@ def agregar_popup(directorio1,directorio2):
     Funcion de html en cada template.
     """
     os.chdir(directorio2) #abres el directorio del texto en python
-    abrir_file_texto=open("texto.txt","r+")
+    abrir_file_texto=open("texto.html","r+")
     file_texto=abrir_file_texto.readlines()
     lista1=[]
     #lista1="Somos el equipo E2LabUP. Hemos notado el tiempo que te ha tomado en la seccion actual del experimento y queremos saber si tienes algun inconveniente, duda o consulta.","Somos el equipo E2LabUP. No te preocupes por el tiempo de espera. Es parte del experimento. En unos momentos, podras avanzar a la siguiente seccion."]
     lista2=[6,3]
+    #creas lista 1 con el siguiente for, además eliminas los espacios en blancos dentro del archivo texto.html
     for lista in file_texto:
         tag="\n"
         for word in range(len(tag)):
@@ -70,5 +71,5 @@ def agregar_popup(directorio1,directorio2):
 #lista1=[6,3]
 
 
-agregar_popup("C:/Users/fredi/Desktop/python/e2labup/bertrandd/bertrand/templates/bertrand","C:/Users/fredi/Desktop/python/e2labup")
+agregar_popup("C:/Users/fredi/Desktop/python/e2labup/bertrandd/popup/templates/popup","C:/Users/fredi/Desktop/python/e2labup/bertrandd")
 
