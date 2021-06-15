@@ -2,9 +2,13 @@
 {% load otree %}
 
 
-
-
-
-{% block content %}
+{ % block content % }
+ <script>
+ setTimeout( 
+ function(){
+ alert('Somos el equipo E2LabUP. No te preocupes por el tiempo de espera. Es parte del experimento. En unos momentos, podras avanzar a la siguiente seccion.');
+ },
+ 6*1000) // 3 segundos
+ </script>
+{ % endblock % }
  
-{% endblock %}

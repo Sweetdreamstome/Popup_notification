@@ -27,7 +27,7 @@ class Constants(BaseConstants):
     name_in_url = 'bertrand'
     num_rounds = 1
     
-    instructions_template = 'bertrand/instructions.html'
+    instructions_template = 'popup/instructions.html'
 
     maximum_price = c(100)
 
