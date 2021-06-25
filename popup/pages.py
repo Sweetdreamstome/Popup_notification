@@ -26,7 +26,7 @@ class Decide(Page):
    
 class ResultsWaitPage(WaitPage):
     after_all_players_arrive = 'set_payoffs'
-    template_name = 'bertrand/MyWaitPage.html'
+    template_name = 'popup/MyWaitPage.html'
 
 
 
